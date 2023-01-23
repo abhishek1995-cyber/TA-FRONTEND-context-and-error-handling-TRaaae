@@ -1,12 +1,15 @@
 import React from "react";
+import { DarkMode } from "./DarkMode";
+
 
 class Banner extends React.Component {
+  static contextType = DarkMode
   render() {
-    let { isDarkMode } = this.props;
+   
     return (
       <div
         className={
-          isDarkMode
+          this.context
             ? "message-dark message--banner message--success"
             : "message message--banner message--success"
         }
